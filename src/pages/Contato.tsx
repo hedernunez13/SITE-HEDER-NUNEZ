@@ -3,14 +3,13 @@ import { Mail, MapPin, MessageCircle } from "lucide-react"
 import { ContactForm } from "@/components/ContactForm"
 import { HeroSection } from "@/components/HeroSection"
 import { siteConfig, whatsappLink } from "@/data/navigation"
-import { unsplashUrl } from "@/data/portfolio"
 
 export default function Contato() {
   return (
     <>
       <HeroSection
         variant="page"
-        image={unsplashUrl("1544005313-94ddf0286df2", 2000, 80)}
+        image="/photos/retratos/retratos-03.jpg"
         eyebrow="Contato"
         title="O instante certo, o olhar certo."
         subtitle="Conte um pouco sobre o seu projeto, evento ou ensaio. Quanto mais detalhes você enviar, melhor será o direcionamento da proposta."

@@ -8,7 +8,6 @@ import {
   getFeaturedByCategory,
   portfolioCategories,
   portfolioImages,
-  unsplashUrl,
 } from "@/data/portfolio"
 import { cn } from "@/lib/utils"
 
@@ -40,7 +39,7 @@ function ShowcaseGrid() {
           >
             {image && (
               <img
-                src={unsplashUrl(image.photoId, 900, 75)}
+                src={image.src}
                 alt={image.alt}
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -109,7 +108,7 @@ function FullGrid() {
             className="group relative mb-4 block w-full overflow-hidden bg-ink/5"
           >
             <img
-              src={unsplashUrl(image.photoId, 800, 75)}
+              src={image.src}
               alt={image.alt}
               loading="lazy"
               className="w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

@@ -4,14 +4,13 @@ import { CTASection } from "@/components/CTASection"
 import { EditorialButton } from "@/components/EditorialButton"
 import { HeroSection } from "@/components/HeroSection"
 import { services } from "@/data/services"
-import { unsplashUrl } from "@/data/portfolio"
 
 export default function Servicos() {
   return (
     <>
       <HeroSection
         variant="page"
-        image={unsplashUrl("1540575467063-178a50c2df87", 2000, 80)}
+        image="/photos/eventos/eventos-01.jpg"
         eyebrow="Serviços"
         title="Fotografia para quem entende o valor da memória."
         subtitle="Cada serviço é conduzido com a mesma exigência técnica e sensibilidade — adaptado ao contexto de cada projeto."

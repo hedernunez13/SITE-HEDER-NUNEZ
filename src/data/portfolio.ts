@@ -16,13 +16,9 @@ export interface PortfolioCategory {
 export interface PortfolioImage {
   id: string
   category: PortfolioCategoryId
-  photoId: string
+  src: string
   alt: string
   featured?: boolean
-}
-
-export function unsplashUrl(photoId: string, width = 1200, quality = 80) {
-  return `https://images.unsplash.com/photo-${photoId}?auto=format&fit=crop&w=${width}&q=${quality}`
 }
 
 export const portfolioCategories: PortfolioCategory[] = [
@@ -64,46 +60,62 @@ export const portfolioCategories: PortfolioCategory[] = [
   },
 ]
 
+function photo(category: PortfolioCategoryId, slug: string) {
+  return `/photos/${category}/${slug}.jpg`
+}
+
 export const portfolioImages: PortfolioImage[] = [
-  { id: "shows-01", category: "shows", photoId: "1470229722913-7c0e2dbbafd3", alt: "Público de show com braços levantados sob luz de palco", featured: true },
-  { id: "shows-02", category: "shows", photoId: "1493676304819-0d7a8d026dcf", alt: "Luzes de palco em show noturno" },
-  { id: "shows-03", category: "shows", photoId: "1459749411175-04bf5292ceea", alt: "Show com iluminação dramática" },
-  { id: "shows-04", category: "shows", photoId: "1501281668745-f7f57925c3b4", alt: "Artista em performance no palco" },
-  { id: "shows-05", category: "shows", photoId: "1478147427282-58a87a120781", alt: "Feixes de luz coloridos sobre a plateia" },
+  { id: "shows-01", category: "shows", src: photo("shows", "shows-01"), alt: "Fogos de artifício e palco em show de música ao vivo", featured: true },
+  { id: "shows-02", category: "shows", src: photo("shows", "shows-02"), alt: "Artista em performance com labareda de fogo no palco" },
+  { id: "shows-03", category: "shows", src: photo("shows", "shows-03"), alt: "Cantor se apresentando ao vivo em show" },
+  { id: "shows-04", category: "shows", src: photo("shows", "shows-04"), alt: "Silhueta em preto e branco de artista no palco" },
+  { id: "shows-05", category: "shows", src: photo("shows", "shows-05"), alt: "Cantor em close durante apresentação ao vivo" },
+  { id: "shows-06", category: "shows", src: photo("shows", "shows-06"), alt: "Fogos de artifício sobre palco de show" },
+  { id: "shows-07", category: "shows", src: photo("shows", "shows-07"), alt: "Show noturno com letreiro luminoso no palco" },
+  { id: "shows-08", category: "shows", src: photo("shows", "shows-08"), alt: "Cantor se apresentando sob luzes de palco" },
+  { id: "shows-09", category: "shows", src: photo("shows", "shows-09"), alt: "Cantor com braço erguido durante show" },
+  { id: "shows-10", category: "shows", src: photo("shows", "shows-10"), alt: "Cantor em performance de palco" },
 
-  { id: "eventos-01", category: "eventos", photoId: "1540575467063-178a50c2df87", alt: "Plateia atenta em evento corporativo" },
-  { id: "eventos-02", category: "eventos", photoId: "1552664730-d307ca884978", alt: "Reunião de negócios em ambiente profissional" },
-  { id: "eventos-03", category: "eventos", photoId: "1515187029135-18ee286d815b", alt: "Conferência institucional com público", featured: true },
-  { id: "eventos-04", category: "eventos", photoId: "1475721027785-f74eccf877e2", alt: "Encontro corporativo com apresentação" },
-  { id: "eventos-05", category: "eventos", photoId: "1519741497674-611481863552", alt: "Retrato de noiva em dia de casamento" },
-  { id: "eventos-06", category: "eventos", photoId: "1511285560929-80b456fea0bc", alt: "Detalhe de alianças de casamento" },
-  { id: "eventos-07", category: "eventos", photoId: "1583939003579-730e3918a45a", alt: "Casal em cerimônia de casamento" },
-  { id: "eventos-08", category: "eventos", photoId: "1606216794074-735e91aa2c92", alt: "Primeira dança dos noivos" },
+  { id: "eventos-01", category: "eventos", src: photo("eventos", "eventos-01"), alt: "Primeira dança dos noivos em casamento", featured: true },
+  { id: "eventos-02", category: "eventos", src: photo("eventos", "eventos-02"), alt: "Casal dançando durante cerimônia de casamento" },
+  { id: "eventos-03", category: "eventos", src: photo("eventos", "eventos-03"), alt: "Momento próximo entre noivos em casamento" },
+  { id: "eventos-04", category: "eventos", src: photo("eventos", "eventos-04"), alt: "Casal comemorando em evento social" },
+  { id: "eventos-05", category: "eventos", src: photo("eventos", "eventos-05"), alt: "Convidadas em ativação de marca durante evento" },
+  { id: "eventos-06", category: "eventos", src: photo("eventos", "eventos-06"), alt: "Convidada em evento noturno" },
 
-  { id: "esporte-01", category: "esporte", photoId: "1461896836934-ffe607ba8211", alt: "Corredores em prova de rua", featured: true },
-  { id: "esporte-02", category: "esporte", photoId: "1517649763962-0c623066013b", alt: "Jogador em ação durante partida" },
-  { id: "esporte-03", category: "esporte", photoId: "1552674605-db6ffd4facb5", alt: "Ciclista em movimento" },
-  { id: "esporte-04", category: "esporte", photoId: "1518611012118-696072aa579a", alt: "Atleta em lance de quadra" },
+  { id: "esporte-01", category: "esporte", src: photo("esporte", "esporte-01"), alt: "Corredora em prova de rua", featured: true },
+  { id: "esporte-02", category: "esporte", src: photo("esporte", "esporte-02"), alt: "Grupo de corredores em prova de rua" },
+  { id: "esporte-03", category: "esporte", src: photo("esporte", "esporte-03"), alt: "Corredora sorrindo durante prova de rua" },
 
-  { id: "retratos-01", category: "retratos", photoId: "1544005313-94ddf0286df2", alt: "Retrato editorial de mulher", featured: true },
-  { id: "retratos-02", category: "retratos", photoId: "1507003211169-0a1dd7228f2d", alt: "Retrato de homem em luz natural" },
-  { id: "retratos-03", category: "retratos", photoId: "1500648767791-00dcc994a43e", alt: "Retrato em preto e branco" },
-  { id: "retratos-04", category: "retratos", photoId: "1552058544-f2b08422138a", alt: "Retrato autoral com iluminação dramática" },
-  { id: "retratos-05", category: "retratos", photoId: "1516450360452-9312f5e86fc7", alt: "Retrato próximo com expressão intensa" },
+  { id: "retratos-01", category: "retratos", src: photo("retratos", "retratos-01"), alt: "Retrato editorial de mulher com iluminação natural", featured: true },
+  { id: "retratos-02", category: "retratos", src: photo("retratos", "retratos-02"), alt: "Ensaio gestante ao pôr do sol" },
+  { id: "retratos-03", category: "retratos", src: photo("retratos", "retratos-03"), alt: "Retrato de mulher sentada em pedras à beira-mar" },
+  { id: "retratos-04", category: "retratos", src: photo("retratos", "retratos-04"), alt: "Retrato de mulher com vestido de renda branco" },
+  { id: "retratos-05", category: "retratos", src: photo("retratos", "retratos-05"), alt: "Ensaio gestante em campo dourado" },
+  { id: "retratos-06", category: "retratos", src: photo("retratos", "retratos-06"), alt: "Retrato de mulher com vestido floral" },
+  { id: "retratos-07", category: "retratos", src: photo("retratos", "retratos-07"), alt: "Silhueta de mulher à beira-mar ao entardecer" },
+  { id: "retratos-08", category: "retratos", src: photo("retratos", "retratos-08"), alt: "Retrato de mulher na água" },
 
-  { id: "institucional-01", category: "institucional", photoId: "1503428593586-e225b39bddfe", alt: "Interior de galeria de arte", featured: true },
-  { id: "institucional-02", category: "institucional", photoId: "1518998053901-5348d3961a04", alt: "Arquitetura institucional" },
-  { id: "institucional-03", category: "institucional", photoId: "1487958449943-2429e8be8625", alt: "Espaço cultural e museológico" },
+  { id: "institucional-01", category: "institucional", src: photo("institucional", "institucional-01"), alt: "Vista aérea do litoral de Salvador", featured: true },
+  { id: "institucional-02", category: "institucional", src: photo("institucional", "institucional-02"), alt: "Vista aérea de praia e cidade" },
+  { id: "institucional-03", category: "institucional", src: photo("institucional", "institucional-03"), alt: "Procissão cultural com imagem religiosa" },
+  { id: "institucional-04", category: "institucional", src: photo("institucional", "institucional-04"), alt: "Registro de manifestação cultural e religiosa" },
+  { id: "institucional-05", category: "institucional", src: photo("institucional", "institucional-05"), alt: "Farol da Barra ao entardecer, Salvador" },
+  { id: "institucional-06", category: "institucional", src: photo("institucional", "institucional-06"), alt: "Banda cultural se apresentando ao ar livre" },
 
-  { id: "autoral-01", category: "autoral", photoId: "1500462918059-b1a0cb512f1d", alt: "Composição fine art abstrata", featured: true },
-  { id: "autoral-02", category: "autoral", photoId: "1493246507139-91e8fad9978e", alt: "Imagem autoral em preto e branco" },
-  { id: "autoral-03", category: "autoral", photoId: "1519750783826-e2420f4d687f", alt: "Estudo visual autoral" },
-  { id: "autoral-04", category: "autoral", photoId: "1543269865-cbf427effbad", alt: "Composição artística de luz e sombra" },
+  { id: "autoral-01", category: "autoral", src: photo("autoral", "autoral-01"), alt: "Composição autoral em preto e branco com farol", featured: true },
+  { id: "autoral-02", category: "autoral", src: photo("autoral", "autoral-02"), alt: "Estudo autoral de onda do mar" },
+  { id: "autoral-03", category: "autoral", src: photo("autoral", "autoral-03"), alt: "Composição abstrata de luz ao pôr do sol" },
+  { id: "autoral-04", category: "autoral", src: photo("autoral", "autoral-04"), alt: "Silhuetas sobre ponte ao entardecer" },
+  { id: "autoral-05", category: "autoral", src: photo("autoral", "autoral-05"), alt: "Pôr do sol com stand up paddle e colina histórica" },
+  { id: "autoral-06", category: "autoral", src: photo("autoral", "autoral-06"), alt: "Campo dourado ao entardecer" },
+  { id: "autoral-07", category: "autoral", src: photo("autoral", "autoral-07"), alt: "Composição artística com vitral e pôr do sol" },
+  { id: "autoral-08", category: "autoral", src: photo("autoral", "autoral-08"), alt: "Reflexo do pôr do sol na orla" },
 ]
 
-export const heroImage = unsplashUrl("1470229722913-7c0e2dbbafd3", 2000, 80)
-export const aboutHeroImage = unsplashUrl("1516450360452-9312f5e86fc7", 1600, 80)
-export const ctaBackgroundImage = unsplashUrl("1543269865-cbf427effbad", 2000, 80)
+export const heroImage = photo("shows", "shows-01")
+export const aboutHeroImage = photo("retratos", "retratos-01")
+export const ctaBackgroundImage = photo("shows", "shows-04")
 
 export function getFeaturedByCategory(): Record<PortfolioCategoryId, PortfolioImage> {
   const result = {} as Record<PortfolioCategoryId, PortfolioImage>

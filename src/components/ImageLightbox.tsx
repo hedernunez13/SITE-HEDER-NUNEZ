@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import type { PortfolioImage } from "@/data/portfolio"
-import { portfolioCategories, unsplashUrl } from "@/data/portfolio"
+import { portfolioCategories } from "@/data/portfolio"
 
 interface ImageLightboxProps {
   images: PortfolioImage[]
@@ -59,7 +59,7 @@ export function ImageLightbox({ images, activeIndex, onOpenChange }: ImageLightb
 
             <figure className="flex max-h-[85svh] max-w-[92vw] flex-col items-center gap-4 sm:max-w-[80vw]">
               <img
-                src={unsplashUrl(active.photoId, 1800, 85)}
+                src={active.src}
                 alt={active.alt}
                 className="max-h-[75svh] w-auto max-w-full object-contain"
               />
