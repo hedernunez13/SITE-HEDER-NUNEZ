@@ -10,7 +10,7 @@ export default function Servicos() {
     <>
       <HeroSection
         variant="page"
-        image="/photos/eventos/eventos-01.jpg"
+        image="/photos/eventos/eventos-03.jpg"
         eyebrow="Serviços"
         title="Fotografia para quem entende o valor da memória."
         subtitle="Cada serviço é conduzido com a mesma exigência técnica e sensibilidade — adaptado ao contexto de cada projeto."
