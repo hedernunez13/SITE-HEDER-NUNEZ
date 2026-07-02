@@ -15,8 +15,8 @@ export const siteConfig = {
   name: "Heder Nunez Fotografia",
   shortName: "Heder Nunez",
   location: "Salvador, Bahia",
-  whatsapp: "5571999999999",
-  whatsappDisplay: "+55 71 99999-9999",
+  whatsapp: "5571992234769",
+  whatsappDisplay: "+55 71 99223-4769",
   email: "contato@hedernunez.com.br",
   instagram: "https://instagram.com/hedernunezfotografia",
 }
