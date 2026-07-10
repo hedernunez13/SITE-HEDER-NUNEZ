@@ -66,7 +66,7 @@ export function MobileMenu({ transparentTrigger }: MobileMenuProps) {
               <div className="flex flex-col gap-1.5">
                 <span className="font-serif text-lg tracking-wide">Heder Nunez</span>
                 <span className="max-w-[220px] text-xs leading-snug text-cream/60">
-                  Fotógrafo em Salvador há 10 anos. Fotografia com emoção, nitidez e alma.
+                  Fotógrafo em Salvador há 10 anos. O instante que fica pra sempre.
                 </span>
               </div>
               <button

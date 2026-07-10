@@ -18,7 +18,7 @@ export default function Home() {
       <HeroSection
         image={heroImage}
         eyebrow="Heder Nunez Fotografia"
-        title="Fotografia com emoção, nitidez e alma."
+        title="O instante que fica pra sempre."
         subtitle="Heder Nunez registra histórias, movimentos, expressões e momentos reais com um olhar autoral construído ao longo de 10 anos de experiência em eventos, cultura, esporte, shows e projetos institucionais."
       >
         <EditorialButton to="/portfolio" variant="cream">
